@@ -10,23 +10,21 @@ function addTask() {
 
   // Create a new li element
   const taskItem = document.createElement('li');
-
-  // Create a new span element for the task text
-  const taskSpan = document.createElement('span');
-  taskSpan.textContent = taskText;
+  taskItem.textContent = taskText;
 
   // Create a new button element for removing the task
   const removeButton = document.createElement('button');
   removeButton.textContent = "Remove";
-  removeButton.className = 'remove-btn';
+
+  // Add the class 'remove-btn' to the remove button
+  removeButton.classList.add('remove-btn');
 
   // Assign an onclick event to the remove button
   removeButton.onclick = () => {
     taskList.removeChild(taskItem);
   };
 
-  // Append the task span and remove button to the li element
-  taskItem.appendChild(taskSpan);
+  // Append the remove button to the li element
   taskItem.appendChild(removeButton);
 
   // Append the li to taskList
